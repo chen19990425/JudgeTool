@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="759.0" prefWidth="497.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chen.controller.MainController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#restartAction" text="Restart" />
+              <MenuItem mnemonicParsing="false" onAction="#closeAction" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#aboutAction" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <VBox prefHeight="269.0" prefWidth="497.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="497.0">
+               <children>
+                  <CheckBox disable="true" mnemonicParsing="false" selected="true" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="70.0" text="试卷前缀" />
+                  <Pane prefHeight="85.0" prefWidth="16.0" />
+                  <TextField fx:id="testPrefix" prefHeight="23.0" prefWidth="234.0" />
+                  <Pane prefHeight="65.0" prefWidth="47.0" />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="497.0">
+               <children>
+                  <CheckBox disable="true" mnemonicParsing="false" selected="true" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="70.0" text="学生文件夹" />
+                  <Pane prefHeight="85.0" prefWidth="16.0" />
+                  <TextField fx:id="studentDirText" editable="false" prefHeight="23.0" prefWidth="289.0" />
+                  <Pane prefHeight="85.0" prefWidth="23.0" />
+                  <Button mnemonicParsing="false" onAction="#chooseStudentDirAction" text="..." />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="497.0">
+               <children>
+                  <CheckBox disable="true" mnemonicParsing="false" selected="true" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="70.0" text="答案文件" />
+                  <Pane prefHeight="85.0" prefWidth="16.0" />
+                  <TextField fx:id="answerFileText" editable="false" prefHeight="23.0" prefWidth="289.0" />
+                  <Pane prefHeight="85.0" prefWidth="23.0" />
+                  <Button mnemonicParsing="false" onAction="#chooseAnswerFileAction" text="..." />
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0" />
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="497.0">
+               <children>
+                  <CheckBox fx:id="importGroupListBox" mnemonicParsing="false" onAction="#chooseImportGroupListAction" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="70.0" text="分组名单" />
+                  <Pane prefHeight="85.0" prefWidth="16.0" />
+                  <TextField fx:id="groupListFileText" disable="true" editable="false" prefHeight="23.0" prefWidth="289.0" />
+                  <Pane prefHeight="85.0" prefWidth="23.0" />
+                  <Button fx:id="chooseGroupListBtn" disable="true" mnemonicParsing="false" onAction="#chooseGroupListAction" text="..." />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Separator prefHeight="0.0" prefWidth="497.0" />
+      <VBox alignment="CENTER" prefHeight="403.0" prefWidth="497.0">
+         <children>
+            <CheckBox fx:id="analyseBox" mnemonicParsing="false" onAction="#analyseBoxAction" text="分析相似度" />
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="497.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="110.0" text="成绩单输出至" />
+                  <Pane prefHeight="85.0" prefWidth="16.0" />
+                  <TextField fx:id="scoreOutText" editable="false" prefHeight="23.0" prefWidth="256.0" />
+                  <Pane prefHeight="85.0" prefWidth="23.0" />
+                  <Button mnemonicParsing="false" onAction="#chooseScoreOutAction" text="..." />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="65.0" prefWidth="497.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="15.0" prefWidth="110.0" text="相似度输出至" />
+                  <Pane prefHeight="85.0" prefWidth="16.0" />
+                  <TextField fx:id="analysePathText" disable="true" editable="false" prefHeight="23.0" prefWidth="256.0" />
+                  <Pane prefHeight="85.0" prefWidth="23.0" />
+                  <Button fx:id="analyseBtn" disable="true" mnemonicParsing="false" onAction="#chooseAnalyseAction" text="..." />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="37.0" prefWidth="497.0">
+               <children>
+                  <Label fx:id="studentCountLabel" text="试卷数目：0" />
+                  <Pane prefHeight="60.0" prefWidth="102.0" />
+                  <Label fx:id="answerLabel" text="答案：未读入" />
+               </children>
+            </HBox>
+            <HBox prefHeight="186.0" prefWidth="497.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <VBox alignment="CENTER" prefHeight="186.0" prefWidth="621.0">
+                     <children>
+                        <Label text="Message">
+                           <font>
+                              <Font name="Forte" size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="messageTextArea" editable="false" prefHeight="186.0" prefWidth="224.0" />
+                     </children>
+                  </VBox>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#mainAction" prefHeight="39.0" prefWidth="195.0" text="RUN" textFill="#ed0000">
+         <font>
+            <Font name="Forte" size="21.0" />
+         </font>
+      </Button>
+   </children>
+</VBox>
